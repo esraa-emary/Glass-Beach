@@ -2,15 +2,47 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-.header{                          /* Put links and logo in a box and apply changes */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #15b9e2,#000,#15b9e2,#000,#15b9e2);
+    border-radius: 6px; 
+}
+
+body{
+    background: #000;
+}
+
+h4{
+    font-size: 1.3rem;
+}
+
+p,h2{
+    color: #fff;
+}
+
+/* ========================== header & home ============================ */
+
+#header{
+    background: url("https://miro.medium.com/v2/resize:fit:1400/format:webp/1*grLxy78Tus_n9zodnG9M4g.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.header{                          
     display: flex;
     gap: 40px;
     font-size: 20px;
-    padding: 20px 40px;
-    border: 2px;
-    background: #15b9e2;
+    padding: 7px 40px;
+    background: transparent;
     align-items: center;
 }
 
@@ -21,57 +53,199 @@
 
 a{
     color: black;
-    font-size: 20px;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 
 #logo{                          
     flex-grow: 1;
-    font-size: 30px;
-}
-
-button{
-    all: unset;
-    padding: 5px;
-    background: #15b9e2;
-    color: black;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 2px black solid;
-    border-radius: 5px;
 }
 
 .title{
-    margin: 50px 200px;
+    padding: 6rem ;
+}
+
+.title h1{
+    font-size: 4.5rem;
+}
+
+a:hover ,.footer img:hover{
+    transform: scale(1.1);
+    transition: all 0.2s;
+    color: #302e2e;
+}
+
+/* =============================== speech1 ============================= */
+
+.tit{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+}
+
+.tit h4{
+    width: 900px;
+    color: #fff;
+}
+
+.tit h1{
+    color: #fff;
+    font-size: 4rem;
+}
+
+/* ================================= part1 & part2 ================================== */
+
+.pp{
+    display: flex;
+    gap: 5rem;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 2rem 5rem 2rem;
 }
 
 .par1{
     display: flex;
-    margin: 0 50px 0 50px;
-    padding: 50px 0 50px 0 ;
+    flex-direction: column;
     align-items: center;
-}
-
-#speech1{
-    flex-grow: 1;
+    justify-content: center;
+    padding: 0;
+    gap: 2rem;
 }
 
 .par2{
     display: flex;
-    margin: 0 50px 0 50px;
-    padding: 50px 0 50px 0 ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#speech1,#speech2{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-#speech2{
-    flex-grow: 1;
+.photo{
+    width: 500px;
+    border-radius: 5rem;
 }
 
-#photo{
-    border-radius: 300px;
+#speech1 h2,#speech2 h2{
+    margin: 0 0 2rem 0;
 }
 
-#photo3{
-    padding: 50px 0 50px 0 ;
+/* ================================== footer ================================ */
+
+.footer img:hover,.photo:hover{
+    box-shadow: 0 0 2rem #fff;
+}
+
+.footer{
+    margin: 0 0 3rem 0;
+}
+
+.footer h1{
+    margin: 0 0 2rem 0;
+    color: #fff;
+}
+
+/* =============================================================== */
+
+@media screen and (max-width : 1232px) {
+    .title h1,.tit h1{
+        font-size: 3.5rem;
+    }
+
+    a{
+        font-size: 1rem;
+    }
+    
+    #logo{       
+        font-size: 1.7rem;
+    }
+
+    .photo{
+        width: 400px;
+    }
+
+    .pp{
+        gap: 4rem;
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .title h1,.tit h1{
+        font-size: 2.5rem;
+    }
+
+    .title{
+        padding: 4rem;
+    }
+
+    .tit h4{
+        width: 600px;
+        font-size: 1.2rem;
+    }
+
+    .photo{
+        width: 340px;
+        height: 200px;
+    }
+
+    .pp{
+        gap: 3rem;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .title{
+        padding: 3rem;
+    }
+
+    .tit h4{
+        width: 400px;
+        font-size: 0.8rem;
+    }
+
+    .pp{
+        flex-direction: column;
+        height: auto;
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .header{ 
+        padding: 7px;
+        gap: 5px;
+    }
+
+    .nav{
+        gap: 10px;
+    }
+
+    .tit h4{
+        width: 300px;
+        font-size: 0.6rem;
+    }
+
+    .tit h1{
+        font-size: 1.5rem;
+    }
+
+    .photo{
+        width: 270px;
+        height: 150px;
+    }
+
+    #speech1 p,#speech2 p{
+        font-size: 0.8rem;
+    }
+
+    .footer h1{
+        font-size: 1.5rem;
+    }
 }
